@@ -15,11 +15,6 @@ node() {
     }
 }
 
-stage 'Init Working Env'
-node() {
-        sh "sudo /opt/bin/init.sh ${project} ${task}"
-}
-
 stage 'Check List'
 node() {
 	echo "\u2705 Check Workspace: ${workspace}/"
@@ -32,11 +27,6 @@ node() {
 	echo '$&@*&%#)(*#@(*_)*&%#*^@&$)*'
 }
 
-stage 'SCM Update'
-node() {
-        git url: repositoryUrl, branch: branch
-        sh "sudo cp -rf ./${task}/* /opt/${project}/${task}/."
-}
 
 stage 'Run Playbook Tasks'
 node() {
