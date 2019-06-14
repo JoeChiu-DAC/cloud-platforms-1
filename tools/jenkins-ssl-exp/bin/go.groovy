@@ -15,7 +15,7 @@ node {
 
     stage 'Git Update'
     node() {
-        git url: repositoryUrl, credentialsId: "dac2018", branch: branch
+        git url: repositoryUrl, credentialsId: "cloud2018", branch: branch
         sh "ls -ltrhR"
     }
 
